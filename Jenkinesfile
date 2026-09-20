@@ -1,0 +1,23 @@
+pipeline {
+    agent any
+
+    stages {
+        stage('Clone') {
+            steps {
+                echo 'Repository already cloned by Jenkins.'
+            }
+        }
+
+        stage('Build') {
+            steps {
+                bat 'python app.py'
+            }
+        }
+
+        stage('Deploy') {
+            steps {
+                echo 'Application deployed successfully.'
+            }
+        }
+    }
+}
